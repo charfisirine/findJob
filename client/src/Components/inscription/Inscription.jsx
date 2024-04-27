@@ -3,6 +3,7 @@ import './inscription.css'
 import InscriptionRecruteur from '../inscriptionrecruteur/InscriptionRecruteur';
 import InscriptionCondidat from '../inscriptioncondidat/inscriptionCondidat';
 import Tabs from '../tabs/Tabs';
+import inscription from "../../assets/inscription.jpg";
 
 const Inscription = () => {
   const tabs = [
@@ -20,25 +21,9 @@ const Inscription = () => {
 
   return (
     <div className="multibox">
-    <div className="leftBox ">
-      <ul>
-        <li>
-        <h2 className='top-distance'>Bon Retour !</h2>
-        </li>
-        <li>
-        <p className='styleparagraph top-distance'>connectouz-vous avec votre compte pour nous rejoindre</p>
-
-        </li>
-        <li>
-          <div className='connecter'>
-          <a href="/connexion" className="btn-connecter top-distance"> se connecter</a>
-
-          </div>
-        
-        </li>
-      </ul>
-
-    </div>
+        <div className="leftBox">
+          <img src={inscription} className="leftimg" />
+        </div>
 
     <div className="righttBox ">
     <div className=" flex">

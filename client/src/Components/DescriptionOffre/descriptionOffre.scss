@@ -1,20 +1,31 @@
 
   .boxdetail {
-    transform: translateY(6rem) ;
+    transform: translateX(24rem);
     width: 50%;
-    background-color: rgb(255, 255, 255);
+    background-color: #F0F8FF;
     padding:2rem;
-    margin: 2rem;
-    height: 70% ;
+    height: 100% ;
+    margin-bottom: 7rem;
+    margin-top: 2rem
   }
-  .Description {
-    display:flex;
-    justify-content: center;
-    background-color:rgb(255, 255, 255) ;
-    // height: 100vh ;
-    padding-bottom: 5rem;
+  // .Description {
+  //   display:flex;
+  //   justify-content: center;
+  //   background-color:rgb(255, 255, 255) ;
+  //   // height: 100vh ;
+  //   padding-bottom: 5rem;
     
-  }
+  // }
+
+  // .container-offre{
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   height: 100vh;
+  //   background-color: white;
+  //   transform: translateY(-2rem)
+  //   }
+  
   .titre{
     margin-bottom: 0.5rem;
   }

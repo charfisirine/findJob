@@ -1,121 +1,69 @@
-import React from 'react'
+import React from 'react';
 import './footer.css'
-import job1 from '../../assets/job1.mp4'
-import { FaInstagram } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
+import { TiSocialFacebook } from "react-icons/ti";
+import { FiInstagram } from "react-icons/fi";
 import { FaTwitter } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
-import { MdCardTravel } from 'react-icons/md';
-import { FiChevronRight } from "react-icons/fi";
-import { FaCopyright } from "react-icons/fa";
+import { FiSend } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <section className="Footer">
-      <div className="videoDiv">
-        <video src={job1} muted autoPlay loop type='video/mp4'></video>
-      </div>
-      <div className="secContent container">
-          <div className="contactDiv flex">
-            <div className="text">
-              <small>KEEP IN TOUCH</small>
-              <h2>Find Your Job With Us </h2>
+    <div className="footer">
+      <div className="container-footer">     
+        <div className="row-footer">                       
+          <div className="col-lg-4 col-sm-4 col-xs-12">
+            <div className="single_footer">
+              <h4>Services</h4>
+              <ul>
+                <li key="service1"><a href="#">Lorem Ipsum</a></li>
+                <li key="service2"><a href="#">Simply dummy text</a></li>
+                <li key="service3"><a href="#">The printing and typesetting </a></li>
+                <li key="service4"><a href="#">Standard dummy text</a></li>
+                <li key="service5"><a href="#">Type specimen book</a></li>
+              </ul>
             </div>
           </div>
-
-          <div className="footerCard flex">
-            <div className="footerIntro flex">
-              <div className="logoDiv">
-                <div className="logo flex">
-                  <h1> <MdCardTravel className="icon" />Offre Emploi</h1>
-                </div>
-              </div>
-              <div className="footerParagraph">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, 
-                ad magni, cum aliquid aut exercitationem excepturi facere assumenda impedit sint,
-                cumque adipisci beatae molestiae ex? Distinctio in omnis voluptas maxime.
-              </div>
-              <div className="footerSocial flex">
-              <FaInstagram className="icon" />
-              <FaTwitter className="icon"/>
-              <FaFacebookF className="icon"/>
-              </div>
-            
-              <div className="footerLinks grid">
-              <div className="linkGroup">
-                  <div className="groupTitle">
-                    <span style={{ color: '#1868ae' }}>Partenaire</span>
-                  </div>
-                  <li>
-                  <div className="footerLists flex">
-                  <FiChevronRight className='icon'/><a href="">Lorem ipsum dolor sit</a>
-                  </div>
-                  </li>
-                  <li>
-                  <div className="footerLists flex">
-                  <FiChevronRight className='icon'/><a href="">Lorem ipsum dolor sit</a>  
-                  </div>
-                  </li>
-                  <li>
-                  <div className="footerLists flex">
-                  <FiChevronRight className='icon'/><a href="">Lorem ipsum dolor sit</a>  
-                  </div>
-                  </li>
-                  <br />
-                  <br />
-                </div>
-                <div className="linkGroup">
-                  <div className="groupTitle">
-                  <span style={{ color: '#1868ae' }}>EMPLOYEUR</span>
-                  </div>
-                  <li>
-                  <div className="footerLists flex">
-                  <FiChevronRight className='icon'/><a href="">Puplier une annonce </a>
-                  </div>
-                  </li>
-                  <li>
-                  <div className="footerLists flex">
-                  <FiChevronRight className='icon'/><a href="#">Trouver un cv</a> 
-                  </div>
-                  </li>
-                  <li>
-                  <div className="footerLists flex">
-                  <FiChevronRight className='icon'/><a href="">connexion</a>  
-                  </div>
-                  </li>
-                  <br />
-                  <br />
-                </div>
-
-
-                <div className="linkGroup">
-                  <div className="groupTitle">
-                    <span style={{ color: '#1868ae' }}>CHERCHEUR D'EMPLO</span>
-                  </div>
-                  <li>
-                  <div className="footerLists flex">
-                  <FiChevronRight className='icon'/><a href="">Trouver un emploi </a>
-                  </div>
-                  </li>
-                  <li>
-                  <div className="footerLists flex">
-                  <FiChevronRight className='icon'/><a href="">connexion</a>  
-                  </div>
-                  </li>
-                  <br />
-                  <br />
-                </div>
-                
-                <div className="footerDiv flex">
-                       <FaCopyright className='icon' /> Copy Right Reserved
-                </div>
-
-              </div>
+          <div className="col-md-4 col-sm-4 col-xs-12">
+            <div className="single_footer single_footer_address">
+              <h4>Page Link</h4>
+              <ul>
+                <li key="link1"><a href="#">Lorem Ipsum</a></li>
+                <li key="link2"><a href="#">Simply dummy text</a></li>
+                <li key="link3"><a href="#">The printing and typesetting </a></li>
+                <li key="link4"><a href="#">Standard dummy text</a></li>
+                <li key="link5"><a href="#">Type specimen book</a></li>
+              </ul>
             </div>
           </div>
+          <div className="col-md-4 col-sm-4 col-xs-12">
+            <div className="single_footer single_footer_address">
+              <h4>Subscribe today</h4>
+              <div className="signup_form">                           
+                <form action="#" className="subscribe">
+                  
+                  <input type="email" id="email" className="subscribe__input" placeholder="Enter Email Address" />
+                  <button type="button" className="subscribe__btn"><FiSend   className="fas fa-paper-plane"/></button>
+                </form>
+              </div>
+            </div>
+            <div className="social_profile">
+              <ul>
+                <li><a href="#"><TiSocialFacebook  className="fab fa-facebook-f"/></a></li>
+                <li><a href="#"><FiInstagram   className="fab fa-facebook-f"/></a></li>
+                <li><a href="#"><FaTwitter   className="fab fa-facebook-f"/></a></li>
+                <li><a href="#"><SiGmail  className="fab fa-facebook-f"/></a></li>
+              </ul>
+            </div>                          
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-lg-12 col-sm-12 col-xs-12">
+            <p className="copyright">Copyright © 2024 <a href="#">Offre emploi</a>.</p>
+          </div>
+        </div>
       </div>
-
-    </section>
-  )
+    </div>
+  );
 }
 
-export default Footer
+export default Footer;

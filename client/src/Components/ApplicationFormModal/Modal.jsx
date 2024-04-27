@@ -1,19 +1,21 @@
 import {React,useState} from 'react'
-import { FaLocationDot } from 'react-icons/fa6'
+import { FaArrowLeft, FaLocationDot } from 'react-icons/fa6'
 import { FcGoogle } from 'react-icons/fc'
 import'./modal.css'
+import Footer from '../Footer/Footer'
 const Modal = () => {
   return (
     <div>
     <div className='Description '>
-        <div className="boxdetail ">
-            <div className='titre'>
+        <div className="boxdetail-postuler">
+          <a href=""><FaArrowLeft  className='icon'/><span className='icon'>Retour</span></a>
+            <div className='titre top-distance'>
                 <h2 className="titre">Stage CIVP Graphic Designer</h2>
             </div>
-            <div className='Nom_Entreprise'>
+            <div className='Nom_Entreprise top-distance'>
                 <p> Nom Entreprise </p>
             </div>
-            <div className='detail'>
+            <div className='detail '>
                 <ul>
                 <li>
                 <FaLocationDot  className='iconloc'/>
@@ -22,7 +24,7 @@ const Modal = () => {
                 <li>
                 <form>
                 <div className="form-group">
-              <label htmlFor="nomprenom" className="label-form">
+              <label htmlFor="nomprenom" className="label-form top-distance">
               Nom & prénom
               </label>
               <input id="nom"type="text"  placeholder="nom" className="form-control"/>
@@ -41,7 +43,7 @@ const Modal = () => {
               <input id="telephone"type="number"  placeholder="telephone" className="form-control"/>
             </div>
             <div>
-                <label for="cv" class="drop-container" id="dropcontainer">
+                <label for="cv" class="drop-container top-distance" id="dropcontainer">
                     <span class="drop-title">Déposer votre  CV</span>
                     ou
                     <input type="file" id="cv" accept="application/pdf" required/>
@@ -62,7 +64,7 @@ const Modal = () => {
 
         </div>
     </div>
-
+    <Footer/>
 </div>
   )
 }

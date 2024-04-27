@@ -1,15 +1,15 @@
 :root {
   --PrimaryColor: #2062af;
-  --SecondaryColor: hsl(187, 100%, 43%);
-  --gradientColor: linear-gradient(to right, hsl(226, 91%, 38%), hsl(187, 90%, 38%));
-  --whiteColor: hsl(0, 0%, 100%);
-  --blackColor: hsl(201, 33%, 16%);
-  --textColor: hsl(201, 33%, 16%);
-  --whiteColorDream: hsl(0, 0%, 93%);
-  --greyText: rgb(240, 240, 246);
-  --inputColor: rgb(240, 240, 246);
-  --bodyColor: rgb(240, 240, 246);
-  --cardBG: rgb(240, 240, 246);
+  --SecondaryColor: #00c2db;
+  --gradientColor: linear-gradient(to right, #0932b9, #0aa4b8);
+  --whiteColor: white;
+  --blackColor: #1b2d36;
+  --textColor: #1b2d36;
+  --whiteColorDream: #ededed;
+  --greyText: #f0f0f6;
+  --inputColor: #f0f0f6;
+  --bodyColor: #f0f0f6;
+  --cardBG: #f0f0f6;
 }
 
 .home {
@@ -19,13 +19,14 @@
   align-items: center;
   justify-content: center;
   margin: auto;
+  transform: translateY(-4rem);
 }
 
 .overlay {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: rgb(119, 132, 157);
+  background: #77849d;
   top: 0;
   bottom: 0;
   z-index: 1;
@@ -38,13 +39,11 @@ video {
   width: 100%;
   top: 0;
   bottom: 0;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .homeContent {
   width: 100%;
-  height: -moz-max-content;
   height: max-content;
   padding: 8rem 1.5rem 3rem;
   display: flex;
@@ -77,6 +76,10 @@ video {
   background: var(--whiteColor);
   border-radius: 10px;
   gap: 1rem;
+  width: 30%;
+  margin: auto;
+  margin-top: 5rem;
+  transform: translateY(-8rem);
 }
 
 .cardDiv .input {
@@ -94,10 +97,6 @@ video {
   width: 100%;
   font-size: 13px;
   font-weight: 500;
-}
-
-.cardDiv .input input::-moz-placeholder, .cardDiv .input select::-moz-placeholder {
-  font-size: 13px;
 }
 
 .cardDiv .input input::placeholder,
@@ -130,7 +129,7 @@ video {
 .recherche {
   background-color: #1868ae;
   color: #fff;
-  padding: 0.6rem 1.5rem;
+  padding: .6rem 1.5rem;
   border-radius: 3rem;
   border: none;
   outline: none;
@@ -145,4 +144,112 @@ video {
 
 .recherche:hover {
   background-color: #c6d7eb;
-}/*# sourceMappingURL=home.css.map */
+}
+
+.main {
+  background-color: #c6d7eb;
+  transform: translateY(-4rem);
+  height: 100%;
+}
+
+.homebox {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.job {
+  margin-top: 1.325rem;
+  border-top: 1px solid #2b2c2d;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.job-title {
+  flex-grow: 1;
+  /* Allow the job title to grow and occupy available space */
+}
+
+.job-button {
+  margin-left: 10px;
+  /* Adjust margin between title and button */
+}
+
+.job .company {
+  color: #4b4956;
+  font-weight: 400;
+  margin: 0 0 .45rem;
+  font-size: 1.125rem;
+}
+
+.job .desc {
+  color: #1e1c2c;
+  margin: .5rem 0 0;
+  font-size: .875rem;
+  word-break: break-word;
+}
+
+.icon {
+  font-size: 25px;
+  color: var(--PrimaryColor);
+  transform: translateY(5px);
+}
+
+.marginright {
+  margin-left: 0.3rem;
+}
+
+ol, ul {
+  list-style-type: none;
+}
+
+.badge.badge-s {
+  height: 1.5rem;
+  line-height: 1.5rem;
+  padding: 0 .875rem;
+  border-radius: 3rem;
+  display: inline-block;
+  background: var(--PrimaryColor);
+  color: #fefdff;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+.lien {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 .25rem;
+  color: #1868ae;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sauvegarder {
+  text-decoration: none;
+  color: #74737e;
+  font-size: .875rem;
+  cursor: pointer;
+  background: 0 0;
+  border: none;
+  height: 3rem;
+  width: 3rem;
+  padding: 0;
+}
+
+.home .cardDiv label {
+  display: block;
+  color: black;
+  padding-bottom: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}

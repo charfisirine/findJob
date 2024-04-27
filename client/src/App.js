@@ -21,33 +21,24 @@ import SideBarCondidat from './Components/SideBarCondidat/SideBar';
 import SideBarRecruteur from './Components/SideBarRecruteur/SideBar';
 import ListeOffrePublier from './Components/ListeDesOffrePublier/ListeOffrePublier';
 import ListeOffrePostuler from './Components/ListeOffrePostuler/ListeOffrePostuler';
-
+import Footer from './Components/Footer/Footer'
 const App = () => {
   return (
-    <>
-    <Navbar/>
     <BrowserRouter>
+    <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>} /> 
         <Route path="/connexion" element={<Connexion/>} />
         <Route path="/OffreForm" element={<OffreForm/>} />
-        <Route path="/DescriptionOffre" element={<DescriptionOffre/>} />
-        <Route path="/modal" element={<Modal/>} />
+        <Route path="/DescriptionOffre/:id" element={<DescriptionOffre />} />
+        <Route path="/DescriptionOffre/modal/:id" element={<Modal />} />
+
         <Route path="/inscription" element={<Inscription/>} />
-        <Route path="/ProfilAdmin" element={
+        <Route path="/Profiladmin" element={
               <div className="container1">
                 <SideBar />
                 <div className="content1">
-                  <Account />
-                </div>
-              </div>
-            }
-          />
-              <Route path="/ProfilAdmin" element={
-              <div className="container1">
-                <SideBar />
-                <div className="content1">
-                  <Account />
+                  <Account userType="admin" />
                 </div>
               </div>
             }
@@ -79,20 +70,20 @@ const App = () => {
                 </div>
               }
             />  
-            <Route path="/ProfilCondidat" element={
+            <Route path="/Profilcandidat" element={
                 <div className="container1">
                   <SideBarCondidat />
                   <div className="content1">
-                  <Account/>
+                  <Account userType="candidat" />
                   </div>
                 </div>
               }
             /> 
-              <Route path="/ProfilRecruteur" element={
+              <Route path="/Profilrecruteur" element={
                 <div className="container1">
                   <SideBarRecruteur />
                   <div className="content1">
-                  <Account/>
+                  <Account userType="recruteur"/>
                   </div>
                 </div>
               }
@@ -115,9 +106,10 @@ const App = () => {
                 </div>
               }
             /> 
+      
       </Routes>
+      
     </BrowserRouter>
-    </>
   )
 }
 

@@ -83,3 +83,11 @@ input{
 body{
     background: var(--bodyColor);
 }
+.col-lg-4 {
+    flex: 0 0 auto;
+    width: 33.3333333333%
+}
+.col-sm-4 {
+    flex: 0 0 auto;
+    width: 33.3333333333%
+}

@@ -6,6 +6,7 @@ import { BsFileEarmarkPost } from "react-icons/bs";
 import { Link } from "react-router-dom"; 
 import { FaUserTie } from "react-icons/fa";
 import { RiUserSearchFill } from "react-icons/ri";
+import { IoHome } from "react-icons/io5";
 
 const SideBar = () => {
   const [showUsersDropdown, setShowUsersDropdown] = useState(false);
@@ -17,8 +18,14 @@ const SideBar = () => {
   return (
     <div className='sidebar active'>
       <ul className='margintop'>
+      <li>
+          <Link to="/" className='liensidebar'> 
+            <IoHome  className='iconsidebar' />
+            Home
+          </Link>
+        </li>
         <li>
-          <Link to="/ProfilAdmin" className='liensidebar'> 
+          <Link to="/Profiladmin" className='liensidebar'> 
             <FaRegUserCircle className='iconsidebar' />
             Account
           </Link>

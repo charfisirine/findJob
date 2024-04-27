@@ -4,7 +4,7 @@ import {createSliceSaga} from "redux-toolkit-saga"
 import { setBanRecruteurSlice, setRecruteurSlice } from './recruteurSlice';
 // const BASE_URL = 'https://someurl.com';
 
-export const recruteurSagaSaga = createSliceSaga({
+export const recruteurSaga = createSliceSaga({
     name: "recruteurSaga",
     caseSagas: {
         *getRecruteurList(data) {
@@ -18,4 +18,4 @@ export const recruteurSagaSaga = createSliceSaga({
     }
 })
 // getRecruteurList ,putRecruteurs hethom les fonction illi definithom texportihom
-export const {getRecruteurList, putRecruteurs} = recruteurSagaSaga.actions
+export const {getRecruteurList, putRecruteurs} = recruteurSaga.actions

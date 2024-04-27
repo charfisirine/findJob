@@ -1,5 +1,6 @@
 
 //styler la partie de deposer cv 
+
 .drop-container {
     display: flex;
     flex-direction: column;
@@ -93,4 +94,17 @@
   // la fin de styler la partie de deposer cv 
 .margintop{
     margin-top: 2rem;
+}
+
+.Description{
+  transform: translateY(-4rem);
+}
+.boxdetail-postuler {
+  transform: translateX(25rem);
+  width: 50%;
+  background-color: #F0F8FF;
+  padding: 2rem;
+  height: 100%;
+  margin-bottom: 3rem;
+  margin-top: 5rem;
 }

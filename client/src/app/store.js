@@ -3,8 +3,12 @@ import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
 import { candidatSaga } from '../Components/Condidat/candidatSaga';
 import {candidatSlice} from '../Components/Condidat/candidatSlice';
-import { recruteurSagaSaga } from '../Components/Recruteur/recruteurSaga';
+import { recruteurSaga } from '../Components/Recruteur/recruteurSaga';
 import { recruteurSlice } from '../Components/Recruteur/recruteurSlice';
+import { connexionSaga } from '../Components/connexion/connexionSaga';
+import { connexionSlice } from '../Components/connexion/connexionSlice';
+import { offreSaga } from '../Components/Offres/offreSaga';
+import { offreSlice } from '../Components/Offres/offreSlice';
 
 
 // Create a saga middleware
@@ -12,15 +16,18 @@ import { recruteurSlice } from '../Components/Recruteur/recruteurSlice';
 const rootReducers = combineReducers({
     // Add  reducers here
     candidat: candidatSlice.reducer,
-    recruteur:recruteurSlice.reducer
+    recruteur: recruteurSlice.reducer,
+    user: connexionSlice.reducer,
+    offre:offreSlice.reducer,
 
   });
 
 const rootSagas = function* rootSaga() {
     yield all([
         candidatSaga.saga(),
-        recruteurSagaSaga.saga()
-        
+        recruteurSaga.saga(),
+        connexionSaga.saga(),
+        offreSaga.saga(),
     ])
 }
 

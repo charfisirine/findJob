@@ -18,13 +18,15 @@
     display:flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--whiteColorDream);
+    background: white;
     width: 100%;
     padding: 0.5rem;
     z-index:1000;
     box-shadow: 0 2px 4px rgba(2,15,29,0.242);
-
-
+    transform: translateY(-4rem);
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 1rem;
     .logo{
         color:var(--PrimaryColor);
         font-weight: 600;
@@ -39,6 +41,36 @@
             transform: translateY(5px);
         }
     }
+
+    .container {
+        position: relative;
+        display: inline-block;
+      }
+      .button {
+        padding: 0;
+        width: 50px;
+        border: 0;
+        background-color: #fff;
+        color: #333;
+        cursor: pointer;
+        outline: 0;
+        font-size: 40px;
+      }
+
+    .dropdown-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      
+        &__item {
+          padding: 8px 12px;
+      
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.14);
+            cursor: pointer;
+          }
+        }
+      }
     @media screen and (max-width:768px) {
 
         .navBar{
@@ -60,7 +92,21 @@
                 width: 100%;
                 margin: auto;
                 padding:.5rem 0;
-
+                .profile {
+                    .dropdown-button {
+                        border: none;
+    
+                    }
+                    .profile-icon {
+                        color: #1868ae;
+                        font-size: 1.5rem;
+                    } 
+                    .dropdown-wrapper {
+                        position: absolute;
+                        right: 1rem;
+                    } 
+                }
+                
                 .navItem{
                     padding: .5rem 0;
                     .navLink{
@@ -106,6 +152,25 @@
           display: none;
         }
         .navLists {
+            .profile {
+                .dropdown-button {
+                    border: none;
+
+                }
+                .profile-icon {
+                    color: #1868ae;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                }
+                .dropdown-wrapper {
+                    border: 0.1rem solid var(--PrimaryColor);
+                    width: 7rem;
+                    background-color: var(--whiteColorDream);
+                    position: absolute;
+                    right: 2rem;
+                    top: 2rem
+                }    
+            }
           .navItem {
             // margin-bottom: 0rem; 
             margin: 1.4rem 1.4rem;

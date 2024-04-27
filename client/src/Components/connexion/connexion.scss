@@ -21,7 +21,8 @@
 .leftimg {
   width: 100%; 
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
+  transform: translateY(5rem); 
 }
 
 .righttBox {
@@ -29,6 +30,8 @@
   margin-top:2.1rem;
   margin-bottom: auto;
   padding: 4rem;
+  transform: translateY(4rem); 
+
 }
 
 .logoDiv {
@@ -79,6 +82,7 @@
     flex: 1;
     height: 0.2px;
     padding-left: 2px;
+    
     background-color: rgb(101, 98, 98);
   }
   .forgot-password{
@@ -89,6 +93,9 @@
   
   .separator-text {
     margin: 0 1px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
   }
   
 .paragraph{
@@ -104,26 +111,27 @@
 }
 .btn-google{
     padding: .6rem 0.7rem;
-    background:#c6d7eb;
-    border-radius: 3rem;
+    background:#1868ae;
+    color: #eff1f3;
+    border-radius: 2rem;
     border: none;
     outline: none;
     cursor: pointer;
     display: inline-block; 
-    width: 100%;
+    width: 50%;
 }
 .btn-connexion{
-    width: 30%;
+    width: 50%;
     display: block;
     margin: 0 auto;
-    border-radius: 0.5rem;
+    border-radius:2rem;
     border: none;
     outline: none;
     cursor: pointer;
     padding: .6rem 1.5rem;
     color: white;
     font-size: 15px;
-    background: var(--gradientColor)
+    background:#1868ae
 }
 .new{
     text-align: center;

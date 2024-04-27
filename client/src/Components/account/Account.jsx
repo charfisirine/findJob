@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import { FaRegEdit } from 'react-icons/fa';
 import "./account.css";
 import { FaUserCircle } from "react-icons/fa";
 import { GoPencil } from "react-icons/go";
 import { FaRegEdit } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-const Account = () => {
+const Account = (props) => {
+  const {userType} = props
+  const { user, type } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+
+  //si le user n'est pas connecté maya9darch ychouf il profile 
+  useEffect(() => {
+    if (userType !== type || !user) {
+      navigate("/");
+    }
+  }, [navigate, user, type, userType]);
+
+  // if (!user) {
+  //   return (<ComponentX />)
+  // }
   return (
     <div>
       <div className="account">
@@ -30,8 +46,7 @@ const Account = () => {
                 </a>
               </legend>
               <p className="pg">
-                <span>sirine</span>
-                <span>charfi</span>
+                <span>{user?.name}</span>
               </p>
             </fieldset>
           </div>
@@ -45,7 +60,7 @@ const Account = () => {
                 </a>
               </legend>
               <p className="pg">
-                <span>charfisirine62@gmail.com</span>
+                <span>{user?.email}</span>
               </p>
             </fieldset>
           </div>
