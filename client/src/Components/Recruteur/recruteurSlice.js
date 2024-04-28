@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
 //awil mat7il il page ijiki tableau candidat fera8
- recruteurs:[],
+ recruteurs:null,
  loading: true
 }
 
@@ -19,16 +19,19 @@ export const recruteurSlice = createSlice({
     },
     
     setBanRecruteurSlice: (state, action) => {
-        const { id } = action.payload;
-        const index = state.recruteurs.findIndex(recruteur => recruteur.id === id);
-        //hethi une fois mal9itichh il indice traja3 -1
-        if (index !== -1) {
-           //kif ta3mil clique sur le bouton ban une fois le recruteur est banné wt3awid tinzil 3lih yraj3ou mouchh banéé wil 3aks  bil 3aks  
-            state.recruteurs[index] = { ...state.recruteurs[index], banned: state.recruteurs[index].banned === 0 ? 1 : 0 };
-        }
-      },
+      const { id } = action.payload;
+      const index = state.recruteurs.findIndex(recruteur => recruteur.id === id);
+      //hethi une fois mal9itichh il indice traja3 -1
+      if (index !== -1) {
+         //kif ta3mil clique sur le bouton ban une fois le recruteur est banné wt3awid tinzil 3lih yraj3ou mouchh banéé wil 3aks  bil 3aks  
+          state.recruteurs[index] = { ...state.recruteurs[index], banned: state.recruteurs[index].banned === 0 ? 1 : 0 };
+      }
+    },
+    setDeleteRecruteurSlice: (state, action) => {
+      state.recruteurs = state.recruteurs.filter(elt => elt.id != action.payload)
+    },
   },
 })
 //ay fonction tdefiniha texportiha hna
 
-export const { setRecruteurSlice, setBanRecruteurSlice } = recruteurSlice.actions
+export const { setRecruteurSlice, setBanRecruteurSlice, setDeleteRecruteurSlice } = recruteurSlice.actions

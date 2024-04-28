@@ -5,14 +5,15 @@ import'./modal.css'
 import Footer from '../Footer/Footer'
 import { useDispatch, useSelector } from 'react-redux'
 import { postDemandeOffresForm } from './demandeoffreSaga'
-import { Link, Navigate, useParams } from 'react-router-dom'
+import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
 import { getOffresList } from '../Offres/offreSaga'
 const Modal = () => {
+  const navigate = useNavigate()
   const {id} = useParams()//njibou biha il id mil url illi houwa il id mte3 il ofre fil cas hethi
   const [redirect, setRedirect] = useState(false);
   const dispatch = useDispatch();
   const { offres } = useSelector ((state) => state.offre);
-  const { user } = useSelector ((state) => state.user);
+  const { user,type } = useSelector ((state) => state.user);
 
   useEffect(()=> {
     if (offres){
@@ -27,6 +28,11 @@ const Modal = () => {
         }
     }
   },[offres])
+
+  if (type == "recruteur") {
+    navigate(`/DescriptionOffre/${id}`);
+    alert("vous n'etes pas un candidat!")
+  }
 
   useEffect(()=> {
     if (!offres){

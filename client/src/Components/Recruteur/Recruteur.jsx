@@ -1,9 +1,9 @@
-import {React,useEffect} from 'react'
+import {React,useEffect, useState} from 'react'
 import Table from '../dataTable/Table';
 import './recruteur.css'
 import { MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { getRecruteurList, putRecruteurs } from "./recruteurSaga";
+import { deleteRecruteurs, getRecruteurList, putRecruteurs } from "./recruteurSaga";
 import { TiTick } from 'react-icons/ti';
 import { FaBan } from 'react-icons/fa';
 
@@ -13,12 +13,19 @@ const Recruteur = () => {
   //state hethi bech tjib ili fil store samineha state juste 5ater documentation hakek si nn na9dar nsamiha kif man7ib
   const { recruteurs } = useSelector((state) => state.recruteur);
   const dispatch = useDispatch();
+  const [recruteurList, setRecruteurList] = useState([])
  
-  console.log({ recruteurs });
+  useEffect(() => {  
+    if (!recruteurs) {
+      dispatch(getRecruteurList());//hethi bech t3ayit lil donnée illi fil basa mil Recruteursaga
+    } 
+  }, [recruteurs]);
 
   useEffect(() => {  
-    dispatch(getRecruteurList());//hethi bech t3ayit lil donnée illi fil basa mil Recruteursaga
-  }, []);
+    if (recruteurs) {
+      setRecruteurList(recruteurs)
+    }
+  }, [recruteurs]);
 
     const tableColumns=[
         {
@@ -95,6 +102,7 @@ const Recruteur = () => {
     
     const handleDelete = (id) => {
       console.log("Delete user with ID:", id);
+      dispatch(deleteRecruteurs({id}))
     };
     
     const handleBan = (id) => {
@@ -104,7 +112,7 @@ const Recruteur = () => {
     };
       return (
         <div className='box-post'>
-          <Table data={recruteurs} columns={tableColumns} />
+          <Table data={recruteurList} columns={tableColumns} />
         </div>
       )
     }

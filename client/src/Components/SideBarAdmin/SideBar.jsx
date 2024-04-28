@@ -21,32 +21,32 @@ const SideBar = () => {
       <li>
           <Link to="/" className='liensidebar'> 
             <IoHome  className='iconsidebar' />
-            Home
+            Acceuil
           </Link>
         </li>
         <li>
           <Link to="/Profiladmin" className='liensidebar'> 
             <FaRegUserCircle className='iconsidebar' />
-            Account
+            Compte
           </Link>
         </li>
         <li>
           <div className='liensidebar' onClick={toggleUsersDropdown}>
             <FaUserAlt className='iconsidebar' />
-            Users
+            Utilisteurs
           </div>
           {showUsersDropdown && (
             <ul className="dropdown-list">
               <li>
                 <Link to="/condidat" className='liensidebar'> 
                 <RiUserSearchFill   className="iconsidebar"/>
-                  Condidat
+                  Condidats
                 </Link>
               </li>
               <li>
                 <Link to="/recruteur" className='liensidebar'>
                 <FaUserTie  className="iconsidebar"/>
-                  Recruteur
+                  Recruteurs
                 </Link>
               </li>
             </ul>
@@ -55,7 +55,7 @@ const SideBar = () => {
         <li>
           <Link to="/posts" className='liensidebar'> 
             <BsFileEarmarkPost className='iconsidebar'/>
-            Posts
+            Publication
           </Link>
         </li>
       </ul>

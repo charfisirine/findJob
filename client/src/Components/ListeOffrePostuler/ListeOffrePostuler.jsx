@@ -33,7 +33,7 @@ const ListeOffrePostuler = () => {
             (item) => item.id == candidature.idOffreEmploi
           );
           //bech na3mil parcours 3al table illi 3andi selon il  idOffreEmploi bech nRaj3 les elements hethom illi mawjoudin 3andi fil return 
-          //map ka2anik bech tappliki faza 3ala iles element mte3 il tableau il kol 
+          //map ka2anik bech tappliki faza 3ala iles element mte3 il tableau il kol
           return {
             nom_entreprise: offre.Nom_Entreprise,
             lieu_travail: offre.Lieu_travail,

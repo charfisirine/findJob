@@ -173,6 +173,14 @@ video {
   border-top: 1px solid #2b2c2d;
 }
 
+.padding-lef {
+  padding-left: 2rem;
+}
+
+.padding-top {
+  padding-top: 1rem;
+}
+
 .job-header {
   display: flex;
   justify-content: space-between;

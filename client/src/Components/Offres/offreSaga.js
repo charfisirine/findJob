@@ -1,37 +1,49 @@
 import { put, call } from 'redux-saga/effects';
-import { setOffreSlice, setBanOffreSlice } from './offreSlice';
+import { setOffreSlice, setBanOffreSlice, setOffreStatus } from './offreSlice';
 import axios from "axios"
-import {createSliceSaga} from "redux-toolkit-saga"
-// const BASE_URL = 'https://someurl.com';
+import { createSliceSaga } from "redux-toolkit-saga"
 
 export const offreSaga = createSliceSaga({
     name: "offreSaga",
     caseSagas: {
         *getOffresList(data) {
-            const response = yield call(()=> axios.get("http://localhost:8000/api/offres"))
-            yield put(setOffreSlice(response.data)) 
+            const response = yield call(() => axios.get("http://localhost:8000/api/offres"))
+            yield put(setOffreSlice(response.data))
         },
 
         *postOffreForm(action) {
             try {
-              const response = yield call(() =>
-                axios.post(
-                  "http://localhost:8000/api/offres", 
-                  action.payload
-                )
-              );
-              if (response.status === 201) {
-                console.log("...");
-              }
+                const response = yield call(() =>
+                    axios.post(
+                        "http://localhost:8000/api/offres",
+                        action.payload
+                    )
+                );
+                if (response.status === 201) {
+                    console.log("...");
+                }
             } catch (error) {
-              console.log(error);
+                console.log(error);
             }
-          },
-        // *putOffres(data) {
-        //     yield call(()=> axios.put(`http://localhost:8000/api/candidat/${data.payload.id}/toggle-ban`))
-        //     yield put(setBanOffreSlice(data.payload))//hethi maktibnech reponse heka 3lmeh 3milnaech response 
-        // },
+        },
+
+
+
+        *acceptOrRefuseOffre(action) {
+            try {
+                const { id, status } = action.payload;
+                const response = yield call(() =>
+                    axios.put(`http://localhost:8000/api/offre/${id}/accept-refuse`, { status })
+                );
+                if (response.status === 200) {
+                    console.log("Offre status updated successfully");
+                    yield put(setOffreStatus({ id, status }))
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        },
     }
 })
-// getCandidatsList ,putCandidats hethom les fonction illi definithom texportihom
-export const {getOffresList, postOffreForm} = offreSaga.actions
+
+export const { getOffresList, postOffreForm, putOffreStatus, acceptOrRefuseOffre } = offreSaga.actions;

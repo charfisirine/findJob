@@ -61,7 +61,7 @@ const Table = ({ data = [], columns = [] }) => {
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Search"
+                        placeholder="Rechercher"
                         value={searchInput}
                         onChange={(e) => setSearchInput(e.target.value)}
                       />

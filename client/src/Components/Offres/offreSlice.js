@@ -17,6 +17,19 @@ export const offreSlice = createSlice({
       state.offres = action.payload
       state.loading = false
     },
+    setOffreStatus: (state, action) => {
+      //payload ki 7ajtik b valeur tista3milha teb3a il documentation mte3 il redux
+      state.offres = state.offres.map((offre)=> {
+        if (offre.id == action.payload.id) {
+          return {
+            ...offre,
+            status: action.payload.status
+          }
+        } else {
+          return {...offre}
+        }
+      })
+    },
     
     // setBanOffreSlice: (state, action) => {
     //     const { id } = action.payload;
@@ -31,4 +44,4 @@ export const offreSlice = createSlice({
 })
 //ay fonction tdefiniha texportiha hna
 
-export const { setOffreSlice, setBanOffreSlice } = offreSlice.actions;
+export const { setOffreSlice, setBanOffreSlice, setOffreStatus } = offreSlice.actions;

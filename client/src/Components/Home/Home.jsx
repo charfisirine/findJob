@@ -7,6 +7,7 @@ import { FaRegBookmark } from "react-icons/fa";
 import Footer from "../Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { getOffresList } from "../Offres/offreSaga";
+import { RiArticleLine } from "react-icons/ri";
 
 const Home = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -41,12 +42,12 @@ const Home = () => {
         <video src={job} muted autoPlay loop type="video/mp4"></video>
         <div className="homeContent container">
           <div className="textDiv">
-            <span className="smallText">Our Packages</span>
-            <h1 className="homeTitle">Search Your Next Job </h1>
+            <span className="smallText">Notre Packets</span>
+            <h1 className="homeTitle">Rechercher Votre Prochain Travail! </h1>
           </div>
           <div className="cardDiv grid">
             <div className="titleInput">
-              <label htmlFor="title">Search Your Title</label>
+              <label htmlFor="title">Rechercher votre Titre</label>
               <div className="input flex">
                 <input
                   type="text"
@@ -58,7 +59,7 @@ const Home = () => {
               </div>
             </div>
             <div className="contratInput">
-              <label htmlFor="contrat">Select Your Contract</label>
+              <label htmlFor="contrat">Selectionner Votre Contrat</label>
               <div className="input flex">
                 <select>
                   <option value="someOption">CDI</option>
@@ -86,8 +87,8 @@ const Home = () => {
               <div className="col col-xs-12 col-m-8">
                 <div className="job-header">
                   <div className="job-title marginright">
-                    <h2 className="marginright">
-                      Offres d'emploi : Stage en Tunisie
+                    <h2 className="marginright padding-lef padding-top">
+                      Offres d'emploi : Emploi en Tunisie
                     </h2>
                   </div>
                 </div>
@@ -101,7 +102,7 @@ const Home = () => {
                 key={offre.id}
               >
                 <div>
-                  <ul className="job">
+                  <ul className="job padding-lef">
                     <article className="clicky">
                       <header className="job-header">
                         <div className="job-title">
@@ -126,15 +127,18 @@ const Home = () => {
                         <li>
                           <FaLocationDot className="icon" />
                           {offre.Lieu_travail}
+                          <RiArticleLine  className='iconloc'/>
+                          {offre.Type_Contrat}
                         </li>
                       </ul>
+
                       <div className="desc">{offre.Description}</div>
                     </article>
                   </ul>
                   <footer>
-                    <ul className="tags">
+                    <ul className="tags padding-lef">
                       <li>
-                        <span className="badge badge-r badge-s">
+                        <span className="badge badge-r badge-s top-distance">
                           {offre.Duree}
                         </span>
                       </li>

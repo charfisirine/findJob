@@ -14,7 +14,7 @@ const SideBarRecruteur = () => {
       <li>
           <Link to="/" className='liensidebar'> 
             <IoHome  className='iconsidebar' />
-            Home
+            Acceuil
           </Link>
         </li>
         <li>

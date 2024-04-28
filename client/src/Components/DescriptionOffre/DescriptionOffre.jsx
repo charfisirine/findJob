@@ -21,8 +21,10 @@ const DescriptionOffre = ({ offreId }) => {
         if (!offres){
             dispatch(getOffresList());
         }
-        dispatch(getRecruteurList());
-    },[offres])
+        if(!recruteurs) {
+            dispatch(getRecruteurList());
+        }
+    },[offres, recruteurs])
 
     useEffect(() => {
         if (offres) {
@@ -31,7 +33,7 @@ const DescriptionOffre = ({ offreId }) => {
                 setOffre(foundOffer);
             }
         }
-        if (recruteurs.length > 0 && offre) {
+        if (recruteurs && recruteurs.length > 0 && offre) {
             const foundRecruteur = recruteurs.find((recruteur) => recruteur.id === offre.id_recruteur);
             setRecruteur(foundRecruteur);
         }

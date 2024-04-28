@@ -27,8 +27,11 @@ export const candidatSlice = createSlice({
             state.candidats[index] = { ...state.candidats[index], banned: state.candidats[index].banned === 0 ? 1 : 0 };
         }
       },
+      setDeleteCandidatSlice: (state, action) => {
+        state.candidats = state.candidats.filter(elt => elt.id != action.payload)
+      },
   },
 })
 //ay fonction tdefiniha texportiha hna
 
-export const { setCandidatSlice, setBanCandidatSlice } = candidatSlice.actions
+export const { setCandidatSlice, setBanCandidatSlice, setDeleteCandidatSlice } = candidatSlice.actions

@@ -11,10 +11,7 @@ export const postSaga = createSliceSaga({
             const response = yield call(()=> axios.get("http://localhost:8000/api/offres"))
             yield put(setCandidatSlice(response.data)) 
         },
-        *putPosts(data) {
-            yield call(()=> axios.put(`http://localhost:8000/api/candidat/${data.payload.id}/toggle-ban`))
-            yield put(setBanCandidatSlice(data.payload))//hethi maktibnech reponse heka 3lmeh 3milnaech response 
-        },
+
     }
 })
 // getCandidatsList ,putCandidats hethom les fonction illi definithom texportihom

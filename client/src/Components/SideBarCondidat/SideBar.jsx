@@ -12,13 +12,13 @@ const SideBarCondidat = () => {
       <li>
           <Link to="/" className='liensidebar'> 
             <IoHome  className='iconsidebar' />
-            Home
+            Acceuil
           </Link>
         </li>
         <li>
           <Link to="/Profilcandidat" className='liensidebar'> 
             <FaRegUserCircle className='iconsidebar' />
-            Account
+            Compte
           </Link>
         </li>
         <li>

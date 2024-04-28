@@ -3,9 +3,10 @@ import "./condidat.css";
 import { MdDelete } from "react-icons/md";
 import Table from "../dataTable/Table";
 import { useDispatch, useSelector } from "react-redux";
-import { getCandidatsList, putCandidats } from "./candidatSaga";
+import { deleteCandidat, getCandidatsList, putCandidats } from "./candidatSaga";
 import { TiTick } from "react-icons/ti";
 import { FaBan } from "react-icons/fa";
+import { setDeleteCandidatSlice } from "./candidatSlice";
 
 const Condidats = () => {
   //hethi il partie mte3 il redux
@@ -93,6 +94,7 @@ const Condidats = () => {
 
   const handleDelete = (id) => {
     console.log("Delete user with ID:", id);
+    dispatch(deleteCandidat({id}))
   }; 
 
   const handleBan = (id) => {
