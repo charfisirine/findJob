@@ -1,15 +1,15 @@
 :root {
   --PrimaryColor: #2062af;
-  --SecondaryColor: #00c2db;
-  --gradientColor: linear-gradient(to right, #0932b9, #0aa4b8);
-  --whiteColor: white;
-  --blackColor: #1b2d36;
-  --textColor: #1b2d36;
-  --whiteColorDream: #ededed;
-  --greyText: #f0f0f6;
-  --inputColor: #f0f0f6;
-  --bodyColor: #f0f0f6;
-  --cardBG: #f0f0f6;
+  --SecondaryColor: hsl(187, 100%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(226, 91%, 38%), hsl(187, 90%, 38%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(201, 33%, 16%);
+  --whiteColorDream: hsl(0, 0%, 93%);
+  --greyText: rgb(240, 240, 246);
+  --inputColor: rgb(240, 240, 246);
+  --bodyColor: rgb(240, 240, 246);
+  --cardBG: rgb(240, 240, 246);
 }
 
 .home {
@@ -26,7 +26,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background: #77849d;
+  background: rgb(119, 132, 157);
   top: 0;
   bottom: 0;
   z-index: 1;
@@ -39,11 +39,13 @@ video {
   width: 100%;
   top: 0;
   bottom: 0;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .homeContent {
   width: 100%;
+  height: -moz-max-content;
   height: max-content;
   padding: 8rem 1.5rem 3rem;
   display: flex;
@@ -99,6 +101,10 @@ video {
   font-weight: 500;
 }
 
+.cardDiv .input input::-moz-placeholder, .cardDiv .input select::-moz-placeholder {
+  font-size: 13px;
+}
+
 .cardDiv .input input::placeholder,
 .cardDiv .input select::placeholder {
   font-size: 13px;
@@ -129,7 +135,7 @@ video {
 .recherche {
   background-color: #1868ae;
   color: #fff;
-  padding: .6rem 1.5rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 3rem;
   border: none;
   outline: none;
@@ -153,7 +159,7 @@ video {
 }
 
 .homebox {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
   padding: 10px;
   margin-left: 10px;
@@ -174,26 +180,24 @@ video {
 }
 
 .job-title {
-  flex-grow: 1;
-  /* Allow the job title to grow and occupy available space */
+  flex-grow: 1; /* Allow the job title to grow and occupy available space */
 }
 
 .job-button {
-  margin-left: 10px;
-  /* Adjust margin between title and button */
+  margin-left: 10px; /* Adjust margin between title and button */
 }
 
 .job .company {
   color: #4b4956;
   font-weight: 400;
-  margin: 0 0 .45rem;
+  margin: 0 0 0.45rem;
   font-size: 1.125rem;
 }
 
 .job .desc {
   color: #1e1c2c;
-  margin: .5rem 0 0;
-  font-size: .875rem;
+  margin: 0.5rem 0 0;
+  font-size: 0.875rem;
   word-break: break-word;
 }
 
@@ -214,7 +218,7 @@ ol, ul {
 .badge.badge-s {
   height: 1.5rem;
   line-height: 1.5rem;
-  padding: 0 .875rem;
+  padding: 0 0.875rem;
   border-radius: 3rem;
   display: inline-block;
   background: var(--PrimaryColor);
@@ -227,7 +231,7 @@ ol, ul {
 .lien {
   font-size: 1.25rem;
   font-weight: 700;
-  margin: 0 0 .25rem;
+  margin: 0 0 0.25rem;
   color: #1868ae;
   white-space: nowrap;
   overflow: hidden;
@@ -237,7 +241,7 @@ ol, ul {
 .sauvegarder {
   text-decoration: none;
   color: #74737e;
-  font-size: .875rem;
+  font-size: 0.875rem;
   cursor: pointer;
   background: 0 0;
   border: none;
@@ -252,4 +256,4 @@ ol, ul {
   padding-bottom: 10px;
   font-size: 13px;
   font-weight: 600;
-}
+}/*# sourceMappingURL=home.css.map */

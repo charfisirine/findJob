@@ -9,6 +9,8 @@ import { connexionSaga } from '../Components/connexion/connexionSaga';
 import { connexionSlice } from '../Components/connexion/connexionSlice';
 import { offreSaga } from '../Components/Offres/offreSaga';
 import { offreSlice } from '../Components/Offres/offreSlice';
+import { demandeoffreSlice } from '../Components/ApplicationFormModal/demandeoffreSlice';
+import { demandeoffreSaga } from '../Components/ApplicationFormModal/demandeoffreSaga';
 
 
 // Create a saga middleware
@@ -19,6 +21,7 @@ const rootReducers = combineReducers({
     recruteur: recruteurSlice.reducer,
     user: connexionSlice.reducer,
     offre:offreSlice.reducer,
+    demandeoffre:demandeoffreSlice.reducer,
 
   });
 
@@ -28,6 +31,7 @@ const rootSagas = function* rootSaga() {
         recruteurSaga.saga(),
         connexionSaga.saga(),
         offreSaga.saga(),
+        demandeoffreSaga.saga(),
     ])
 }
 

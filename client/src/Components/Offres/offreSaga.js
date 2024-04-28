@@ -16,7 +16,7 @@ export const offreSaga = createSliceSaga({
             try {
               const response = yield call(() =>
                 axios.post(
-                  "http://localhost:8000/api/offres", // Assurez-vous que l'URL est correcte
+                  "http://localhost:8000/api/offres", 
                   action.payload
                 )
               );

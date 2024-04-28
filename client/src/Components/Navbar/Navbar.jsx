@@ -8,10 +8,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { postLogout } from "../connexion/connexionSaga";
 
 const Navbar = () => {
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { user, token, type } = useSelector((state) => state.user);
-  console.log({ token });
 
   const DropDownMenu = () => {
     const [open, setOpen] = useState(false);
@@ -47,10 +46,15 @@ const Navbar = () => {
               <li className="dropdown-menu__item">
                 <Link to={`/Profil${type}`}>Profile</Link>
               </li>
-              <li className="dropdown-menu__item" onClick={()=> {
-                dispatch(postLogout({token, type}))
-                navigate("/")
-              }}>Logout</li>
+              <li
+                className="dropdown-menu__item"
+                onClick={() => {
+                  dispatch(postLogout({ token, type }));
+                  navigate("/");
+                }}
+              >
+                Logout
+              </li>
             </ul>
           </div>
         )}
@@ -94,11 +98,14 @@ const Navbar = () => {
                 Recherche emploi
               </a>
             </li>
-            <li className="navItem">
-              <a href="/OffreForm" className="navLink">
-                Publier une offre
-              </a>
-            </li>
+            {type && type !== "candidat" && (
+              <li className="navItem">
+                <a href="/OffreForm" className="navLink">
+                  Publier une offre
+                </a>
+              </li>
+            )}
+
             {/* <li className="navItem">
               <a href="/Profiladmin" className="navLink">
                 Admin

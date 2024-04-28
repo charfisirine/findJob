@@ -11,12 +11,12 @@ const Offres = () => {
   //state hethi bech tjib ili fil store samineha state juste 5ater documentation hakek si nn na9dar nsamiha kif man7ib
   const { offres } = useSelector((state) => state.offre);
   const dispatch = useDispatch();
- 
-  console.log({ Offres });
 
-  useEffect(() => {  
-    dispatch(getOffresList());
-  }, []);
+  useEffect(() => { 
+    if (!offres) {
+      dispatch(getOffresList());
+    } 
+  }, [offres]);
 
 const tableColumns=[
     {

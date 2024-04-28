@@ -16,11 +16,11 @@ a:focus {
   -moz-transition-timing-function: ease-in-out;
   -webkit-transition-timing-function: ease-in-out;
   -o-transition-timing-function: ease-in-out;
-  transition-duration: .2s;
-  -ms-transition-duration: .2s;
-  -moz-transition-duration: .2s;
-  -webkit-transition-duration: .2s;
-  -o-transition-duration: .2s;
+  transition-duration: 0.2s;
+  -ms-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
 }
 
 .row-footer {
@@ -58,7 +58,6 @@ section {
     margin-bottom: 30px;
   }
 }
-
 .single_footer h4 {
   color: #fff;
   margin-top: 0;
@@ -89,7 +88,6 @@ section {
 
 .single_footer ul li a {
   color: #fff;
-  -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   line-height: 36px;
   font-size: 15px;
@@ -146,7 +144,6 @@ section {
     padding: 0 50px 0 20px;
   }
 }
-
 .subscribe__btn {
   background-color: transparent;
   border-radius: 0 25px 25px 0;
@@ -170,7 +167,6 @@ section {
     right: 0px;
   }
 }
-
 .subscribe__btn:hover i {
   color: #ff3666;
 }
@@ -179,7 +175,6 @@ button {
   padding: 0;
   border: none;
   background-color: transparent;
-  -webkit-border-radius: 0;
   border-radius: 0;
 }
 
@@ -221,7 +216,6 @@ button {
     margin-bottom: 10px;
   }
 }
-
 @media only screen and (max-width: 480px) {
   .social_profile ul li a {
     width: 40px;
@@ -229,7 +223,6 @@ button {
     line-height: 40px;
   }
 }
-
 .social_profile ul li a:hover {
   background: #ff3666;
   border: 1px solid #ff3666;
@@ -254,4 +247,4 @@ button {
 
 .copyright a:hover {
   color: #ff3666;
-}
+}/*# sourceMappingURL=footer.css.map */

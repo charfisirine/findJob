@@ -10,10 +10,10 @@ import { getPostsList, putPosts } from './postSaga';
 const Posts = () => {
   //hethi il partie mte3 il redux
   //state hethi bech tjib ili fil store samineha state juste 5ater documentation hakek si nn na9dar nsamiha kif man7ib
-  const { posts } = useSelector((state) => state.post);
+  const { offres } = useSelector((state) => state.offre);
   const dispatch = useDispatch();
  
-  console.log({ posts });
+  console.log({ offres });
 
   useEffect(() => {  
     dispatch(getPostsList());
@@ -62,18 +62,10 @@ const tableColumns=[
         title: (value) => <th key={value}>{value}</th>,
         render: (value, data, column) => <td key={`${data.id}-${data[column.key]}`}>{value}</td>
     },
-    {
-        key:"action",
-        dataIndex:"Actions",
-        title: (value) => <th key={value}>{value}</th>,
-        render: (value, data) => (
-            <td key={`${data.id}-${value}`}>
-              <MdDelete onClick={() => handleDelete(data.id)} className="icon" />
-            </td>
-          ),    },
+
           {
-            key: "banned",
-            dataIndex: "Ban",
+            key: "status",
+            dataIndex: "status",
             title: (value) => <th key={value}>{value}</th>,
             render: (value, data) => (
               <td key={`${data.id}-${value}`}>
@@ -101,7 +93,7 @@ const handleBan = (id) => {
 };
   return (
     <div className='box-post'>
-      <Table data={posts} columns={tableColumns} />
+      <Table data={offres} columns={tableColumns} />
     </div>
   )
 }

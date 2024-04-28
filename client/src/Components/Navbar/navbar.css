@@ -1,17 +1,15 @@
 :root {
   --PrimaryColor: #2062af;
-  --SecondaryColor: #00c2db;
-  --gradientColor: linear-gradient(to right, #0932b9, #0aa4b8);
-  --whiteColor: white;
-  --blackColor: #1b2d36;
+  --SecondaryColor: hsl(187, 100%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(226, 91%, 38%), hsl(187, 90%, 38%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
   --textColor: var(--whiteColor);
-  --whiteColorDream: #ededed;
-  --greyText: #bebebe;
-  --inputColor: #bebebe;
-  /* Add your input color value */
-  --bodyColor: #f0f0f6;
-  --cardBG: #bebebe;
-  /* Add your card background value */
+  --whiteColorDream: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(190, 190, 190); /* Add your input color value */
+  --bodyColor: rgb(240, 240, 246);
+  --cardBG: rgb(190, 190, 190); /* Add your card background value */
 }
 
 .header {
@@ -29,7 +27,6 @@
   padding-left: 2rem;
   padding-top: 1rem;
 }
-
 .header .logo {
   color: var(--PrimaryColor);
   font-weight: 600;
@@ -38,18 +35,15 @@
   justify-content: center;
   transform: translateY(8px);
 }
-
 .header .logo .icon {
   font-size: 25px;
   color: var(--PrimaryColor);
   transform: translateY(5px);
 }
-
 .header .container {
   position: relative;
   display: inline-block;
 }
-
 .header .button {
   padding: 0;
   width: 50px;
@@ -60,26 +54,23 @@
   outline: 0;
   font-size: 40px;
 }
-
 .header .dropdown-menu {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .header .dropdown-menu__item {
   padding: 8px 12px;
 }
-
 .header .dropdown-menu__item:hover {
   background-color: rgba(0, 0, 0, 0.14);
   cursor: pointer;
 }
-
 @media screen and (max-width: 768px) {
   .header .navBar {
     position: absolute;
     background: var(--whiteColorDream);
+    height: -moz-max-content;
     height: max-content;
     width: 80%;
     border-radius: 3rem;
@@ -96,7 +87,7 @@
     justify-content: center;
     width: 100%;
     margin: auto;
-    padding: .5rem 0;
+    padding: 0.5rem 0;
   }
   .header .navBar .navLists .profile .dropdown-button {
     border: none;
@@ -110,11 +101,11 @@
     right: 1rem;
   }
   .header .navBar .navLists .navItem {
-    padding: .5rem 0;
+    padding: 0.5rem 0;
   }
   .header .navBar .navLists .navItem .navLink {
     color: #1868ae;
-    font-size: .9rem;
+    font-size: 0.9rem;
     font-weight: 600;
   }
   .header .navBar .navLists .navItem .navLink:hover {
@@ -136,16 +127,13 @@
     top: 7rem;
   }
 }
-
 .header .toggleNavbar .icon {
   font-size: 25px;
   color: var(--PrimaryColor);
 }
-
 .header .toggleNavbar .icon:hover.icon {
   color: var(--SecondaryColor);
 }
-
 @media screen and (min-width: 769px) {
   .header .toggleNavBar,
   .header .closeNavbar {
@@ -172,10 +160,10 @@
   }
   .header .navLists .navItem .navLink {
     color: #1868ae;
-    font-size: .9rem;
+    font-size: 0.9rem;
     font-weight: 600;
   }
   .header .navLists .navItem:nth-child(2) {
     margin-right: 4rem;
   }
-}
+}/*# sourceMappingURL=navbar.css.map */

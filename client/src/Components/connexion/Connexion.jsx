@@ -6,6 +6,8 @@ import Tabs from "../tabs/Tabs";
 import { useDispatch, useSelector } from "react-redux";
 import { postLogin } from "./connexionSaga";
 import { useNavigate } from "react-router-dom";
+import Footer from "../Footer/Footer";
+import { FaArrowLeft } from "react-icons/fa6";
 
 const Connexion = () => {
   const tabs = [
@@ -20,6 +22,12 @@ const Connexion = () => {
       content: <ConnexionForm type={"candidat"} />,
       //ay 7aja na3tiha ba7dda  ConnexionForm rahi titsama props 
     },
+    {
+      id: 3,
+      name: "Admin",
+      content: <ConnexionForm type={"admin"} />,
+      //ay 7aja na3tiha ba7dda  ConnexionForm rahi titsama props 
+    },
   ];
   return (
     <div>
@@ -28,7 +36,10 @@ const Connexion = () => {
           <img src={connexion2} className="leftimg" />
         </div>
         <div className="righttBox">
-          <div className="logo flex">
+        <a href="/"><FaArrowLeft  className='icon'/><span className='icon'>Retour</span></a>
+
+          <div className="logo flex top-distance">
+
             <h1>
               <MdCardTravel className="icon" />
               Offre Emploi
@@ -47,6 +58,7 @@ const Connexion = () => {
           {/* props ka2nha parametre fil component  */}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
@@ -105,7 +117,7 @@ const ConnexionForm = (props) => {
             onChange={handleChange}
           />
         </div>
-        {/* <div className="form-group">
+         {/* <div className="form-group">
               <div className="form-check">
                 <input
                   type="checkbox"
@@ -139,7 +151,9 @@ const ConnexionForm = (props) => {
             Créer un nouveau compte
           </a>
         </div>
+
       </form>
+      
     </div>
   );
 };

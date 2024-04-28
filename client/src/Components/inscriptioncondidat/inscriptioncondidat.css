@@ -2,6 +2,7 @@
   display: flex;
   width: 100%;
   background-color: white;
+  transform: translateY(-6rem);
 }
 
 .leftBox {
@@ -9,7 +10,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #5494de;
+  background-color: white;
+  transform: translateY(2rem);
 }
 
 .top-distance {
@@ -21,10 +23,11 @@
   margin-top: 2.1rem;
   padding: 4rem;
   background-color: white;
+  transform: translateY(2rem);
 }
 
 .styleparagraph {
-  color: #fef8f8;
+  color: rgb(254, 248, 248);
 }
 
 .connecter, .inscrire {
@@ -32,7 +35,7 @@
 }
 
 .btn-connecter {
-  padding: .6rem 0.7rem;
+  padding: 0.6rem 0.7rem;
   border-radius: 3rem;
   border: none;
   outline: none;
@@ -42,14 +45,13 @@
   color: #5494de;
   background: rgba(255, 255, 255, 0.9);
 }
-
 .btn-connecter:hover {
   background: transparent;
   color: white;
 }
 
 .btn-inscrire {
-  padding: .6rem 0.7rem;
+  padding: 0.6rem 0.7rem;
   border-radius: 3rem;
   border: none;
   outline: none;
@@ -59,7 +61,6 @@
   background: #5494de;
   color: white;
 }
-
 .btn-inscrire:hover {
   color: #5494de;
   background: transparent;
@@ -73,4 +74,4 @@
   .leftBox {
     display: none;
   }
-}
+}/*# sourceMappingURL=inscriptioncondidat.css.map */

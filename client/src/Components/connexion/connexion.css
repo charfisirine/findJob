@@ -1,6 +1,11 @@
 .multibox {
   display: flex;
   width: 100%;
+  background-color: white;
+}
+
+.connexion-buton {
+  color: #1868ae;
 }
 
 .leftBox {
@@ -21,9 +26,6 @@
 .leftimg {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  transform: translateY(5rem);
 }
 
 .righttBox {
@@ -31,7 +33,7 @@
   margin-top: 2.1rem;
   margin-bottom: auto;
   padding: 4rem;
-  transform: translateY(4rem);
+  transform: translateY(1rem);
 }
 
 .logoDiv {
@@ -61,16 +63,18 @@
   margin-bottom: 0.5rem;
 }
 
-.form-control {
+/* .form-control {
   height: 40px;
   padding: 0.625rem 10px;
   background: #eff1f3;
   border-radius: 0.5rem;
   border: 1px solid rgb(62, 56, 56);
-  width: 100%;
+  width: 21rem;
   font-size: 1rem;
   letter-spacing: 0.062rem;
-}
+} */
+
+
 
 .separator {
   display: flex;

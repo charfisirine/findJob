@@ -15,10 +15,27 @@ const Table = ({ data = [], columns = [] }) => {
       });
     });
   };
-  
 
   if (data.length === 0) {
-    return null
+    return (
+      <div className="box">
+        <div className="mt-4 mb-4">
+          <div className="row ">
+            <div className="col-md-10">
+              <div className="card">
+                <div className="card-body p-3">
+                  <div className="row justify-content-between align-items-center">
+                    <div className="col-md-3 search-container ">
+                      Pas de Donnee!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (

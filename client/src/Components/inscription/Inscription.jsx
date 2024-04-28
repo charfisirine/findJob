@@ -4,6 +4,7 @@ import InscriptionRecruteur from '../inscriptionrecruteur/InscriptionRecruteur';
 import InscriptionCondidat from '../inscriptioncondidat/inscriptionCondidat';
 import Tabs from '../tabs/Tabs';
 import inscription from "../../assets/inscription.jpg";
+import Footer from '../Footer/Footer';
 
 const Inscription = () => {
   const tabs = [
@@ -20,6 +21,7 @@ const Inscription = () => {
 ];
 
   return (
+    <div>
     <div className="multibox">
         <div className="leftBox">
           <img src={inscription} className="leftimg" />
@@ -46,6 +48,9 @@ const Inscription = () => {
      </div>
     <Tabs tabs={tabs} />
     </div>
+    
+  </div>
+  <Footer/>
   </div>
   )
 }

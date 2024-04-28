@@ -47,7 +47,7 @@
 }
 
 .btn-postuler {
-  padding: .6rem 0.7rem;
+  padding: 0.6rem 0.7rem;
   background: #c6d7eb;
   color: var(--PrimaryColor);
   border-radius: 3rem;
@@ -63,9 +63,9 @@
   .boxdetail {
     transform: translateY(6rem);
     width: 100%;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding: 1rem;
     margin: 0rem;
     height: 100%;
   }
-}
+}/*# sourceMappingURL=descriptionOffre.css.map */

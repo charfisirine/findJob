@@ -22,6 +22,7 @@ import SideBarRecruteur from './Components/SideBarRecruteur/SideBar';
 import ListeOffrePublier from './Components/ListeDesOffrePublier/ListeOffrePublier';
 import ListeOffrePostuler from './Components/ListeOffrePostuler/ListeOffrePostuler';
 import Footer from './Components/Footer/Footer'
+import ListeDemandesOffrePublier from './Components/ListeDemandesDesOffrePublier/ListeDemandesOffrePublier';
 const App = () => {
   return (
     <BrowserRouter>
@@ -93,6 +94,15 @@ const App = () => {
                   <SideBarRecruteur />
                   <div className="content1">
                   <ListeOffrePublier/>
+                  </div>
+                </div>
+              }
+            /> 
+            <Route path="/ListeOffrePublier/ListeDemandes/:id" element={
+                <div className="container1">
+                  <SideBarRecruteur />
+                  <div className="content1">
+                  <ListeDemandesOffrePublier/>
                   </div>
                 </div>
               }

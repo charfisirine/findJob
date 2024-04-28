@@ -3,7 +3,9 @@
   display: flex; 
   width: 100%;
   background-color: white;
-  // transform: translateY(2rem); 
+  // transform: translateY(2rem);
+  transform: translateY(-6rem);
+
 }
 
 .leftBox {
@@ -11,7 +13,9 @@
   display: flex;
   justify-content: center; 
   align-items: center; 
-  background-color:#5494de;
+  background-color:white;
+  transform: translateY(2rem);
+   
 }
 .top-distance{
     margin-top: 0.7rem;
@@ -22,6 +26,7 @@
   margin-top:2.1rem;
   padding: 4rem;
   background-color: white;
+  transform: translateY(2rem);
   
 }
 .styleparagraph{

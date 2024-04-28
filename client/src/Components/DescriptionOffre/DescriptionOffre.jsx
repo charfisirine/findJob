@@ -18,14 +18,18 @@ const DescriptionOffre = ({ offreId }) => {
     const [offre, setOffre] = useState(null);
 
     useEffect(()=> {
-        dispatch(getOffresList());
+        if (!offres){
+            dispatch(getOffresList());
+        }
         dispatch(getRecruteurList());
-    },[])
+    },[offres])
 
     useEffect(() => {
-        if (offres.length > 0) {
+        if (offres) {
             const foundOffer = offres.find((item) => item.id == id);
-            setOffre(foundOffer);
+            if (foundOffer) {
+                setOffre(foundOffer);
+            }
         }
         if (recruteurs.length > 0 && offre) {
             const foundRecruteur = recruteurs.find((recruteur) => recruteur.id === offre.id_recruteur);

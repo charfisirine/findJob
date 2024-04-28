@@ -137,6 +137,12 @@ const InscriptionCandidat = () => {
             </button>
           </div>
         </div>
+        <div className="google top-distance">
+          <span>vous avez un compte?</span> 
+          <a href="/connexion"className="connexion-buton" >
+             <span>Se Connecter </span>
+          </a>
+        </div>
       </div>
     </form>
   );

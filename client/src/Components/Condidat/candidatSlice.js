@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
 //awil mat7il il page ijiki tableau candidat fera8
- candidats:[],
+ candidats: null,
  loading: true
 }
 

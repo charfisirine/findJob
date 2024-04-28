@@ -15,14 +15,19 @@ const Home = () => {
   const [filteredOffres, setFilteredOffres] = useState([]);
 
   useEffect(() => {
-    dispatch(getOffresList());
-  }, [dispatch]);
+    if (!offres) {
+      dispatch(getOffresList());
+    }
+  }, [dispatch, offres]);
 
   useEffect(() => {
-    const filteredData = offres.filter((offre) =>
+    if (offres) {
+      const filteredData = offres.filter((offre) =>
       offre.Titre.toLowerCase().includes(searchInput.toLowerCase())
-    );
-    setFilteredOffres(filteredData);
+      );
+      setFilteredOffres(filteredData);
+    }
+    
   }, [searchInput, offres]);
 
   const handleSearch = () => {

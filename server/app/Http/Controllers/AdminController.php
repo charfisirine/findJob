@@ -11,33 +11,34 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
 
+
+
     public function register(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:admins',
-            'password' => 'required|min:6',
-        ]);
-    
-        try {
-            $admin = Admin::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
-            ]);
-    
-            $token = $admin->createToken('adminToken')->plainTextToken;
-    
-            return response()->json([
-                'admin' => $admin,
-                'token' => $token,
-            ], 201);
-        } catch (\Exception $e) {
-            Log::error('Admin Registration Error: ' . $e->getMessage());
-            return response()->json(['message' => 'Registration Failed'], 500);
+        $existingAdmin = Admin::where('email', $request->input('email'))->first();
+        if ($existingAdmin) {
+            return response()->json(['error' => 'The email has already been taken.'], 422);
         }
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:Admins,email',
+            'password' => 'required|min:6'
+        ]);
+        $Admin = Admin::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+
+        ]);
+        $token = $Admin->createToken('AdminToken')->plainTextToken;
+        return response()->json([
+            $Admin,
+            'status' => true,
+            'message' => 'Admin Created Successfully',
+            'token' => $token
+        ], 200);
     }
-    
+
 
     public function login(Request $request)
     {
@@ -62,7 +63,7 @@ class AdminController extends Controller
             'token' => $token,
         ]);
     }
-    
+
     public function logout(Request $request)
     {
         $request->user('admin')->currentAccessToken()->delete();

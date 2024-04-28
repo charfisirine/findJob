@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { postOffreForm } from "../Offres/offreSaga";
 import "./offreform.css";
-import { Navigate, Redirect } from "react-router-dom";
+import { Navigate, Redirect, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { FaArrowLeft } from "react-icons/fa6";
 const OffreForm = () => {
+  const navigate = useNavigate()
   const [redirect, setRedirect] = useState(false);
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.user);
+  const { user, type } = useSelector((state) => state.user);
+  //njibou il slice illi definitou fil store  w tdefini les objet illi mawjoudin fil slice minhom il type , token
   const [formData, setFormData] = useState({
     Titre: "",
     Nom_Entreprise: "",
@@ -18,6 +20,12 @@ const OffreForm = () => {
     Salaire: "",
     Type_Contrat: "",
   });
+
+  useEffect(()=> {
+    if (type == "candidat") {
+      navigate("/")
+    }
+  },[navigate, type])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +38,7 @@ const OffreForm = () => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  // Rediriger si redirect est vrai
+  // rediriger si redirect est vrai
   if (redirect) {
     return <Navigate to="/" replace={true} />;
   }
@@ -114,18 +122,18 @@ const OffreForm = () => {
                   <input
                     type="number"
                     step="any"
-                    className="form-control"
+                    className="form-control-number"
                     name="salaire"
                     id="Salaire"
                     placeholder="Salaire"
                     onChange={handleChange}
                   />
                 </div>
-                <div className="form-group form-item">
+                <div className="form-group ">
                   <label htmlFor="contrat">Type de Contrat</label>
                   <div>
                     <select
-                      className="form-control"
+                      className="form-control-select" 
                       id="Type_Contrat"
                       onChange={handleChange}
                     >
@@ -136,8 +144,9 @@ const OffreForm = () => {
                       <option value="CDD">CDD</option>
                       <option value="Volontariat">Volontariat</option>
                     </select>
+                    </div>
                   </div>
-                </div>
+              
               </div>
             </div>
 

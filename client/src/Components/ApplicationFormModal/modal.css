@@ -9,7 +9,7 @@
   border: 2px dashed #222245;
   color: #222245;
   cursor: pointer;
-  transition: background .2s ease-in-out, border .2s ease-in-out;
+  transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 
 .drop-container:hover {
@@ -79,7 +79,6 @@ input[type=file]::file-selector-button:hover {
     color: #fff;
   }
 }
-
 body {
   font-family: system-ui;
 }
@@ -100,4 +99,4 @@ body {
   height: 100%;
   margin-bottom: 3rem;
   margin-top: 5rem;
-}
+}/*# sourceMappingURL=modal.css.map */

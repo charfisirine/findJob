@@ -11,13 +11,22 @@ const Condidats = () => {
   //hethi il partie mte3 il redux
   //state hethi bech tjib ili fil store samineha state juste 5ater documentation hakek si nn na9dar nsamiha kif man7ib
   const { candidats } = useSelector((state) => state.candidat);
+  const [candidatList, setCandidatList] = useState([])
+
   const dispatch = useDispatch();
  
-  console.log({ candidats });
 
-  useEffect(() => {  
-    dispatch(getCandidatsList());
-  }, []);
+  useEffect(() => { 
+    if(!candidats) {
+      dispatch(getCandidatsList());
+    } 
+  }, [candidats]);
+
+  useEffect(() => { 
+    if(candidats) {
+      setCandidatList(candidats);
+    } 
+  }, [candidats]);
 
   const tableColumns = [
     {
@@ -93,7 +102,7 @@ const Condidats = () => {
 
   return (
     <div className="box-users">
-      <Table data={candidats} columns={tableColumns} />
+      <Table data={candidatList} columns={tableColumns} />
     </div>
   );
 };
