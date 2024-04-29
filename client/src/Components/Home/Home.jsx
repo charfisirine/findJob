@@ -42,8 +42,6 @@ const Home = () => {
         <video src={job} muted autoPlay loop type="video/mp4"></video>
         <div className="homeContent container">
           <div className="textDiv">
-            <span className="smallText">Notre Packets</span>
-            <h1 className="homeTitle">Rechercher Votre Prochain Travail! </h1>
           </div>
           <div className="cardDiv grid">
             <div className="titleInput">
@@ -51,7 +49,7 @@ const Home = () => {
               <div className="input flex">
                 <input
                   type="text"
-                  placeholder="Enter your title here"
+                  placeholder="Entrer votre titre"
                   value={searchInput}
                   onChange={(e) => setSearchInput(e.target.value)}
                 />

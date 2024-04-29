@@ -15,11 +15,10 @@ const Footer = () => {
             <div className="single_footer">
               <h4>Services</h4>
               <ul>
-                <li key="service1"><a href="#">Lorem Ipsum</a></li>
-                <li key="service2"><a href="#">Simply dummy text</a></li>
-                <li key="service3"><a href="#">The printing and typesetting </a></li>
-                <li key="service4"><a href="#">Standard dummy text</a></li>
-                <li key="service5"><a href="#">Type specimen book</a></li>
+                <li key="service1"><a href="#">Recherche d'emploi </a></li>
+                <li key="service2"><a href="#">Publication d'offres d'emploi </a></li>
+                <li key="service3"><a href="#">Suivi des candidatures </a></li>
+                <li key="service4"><a href="#">Suivi des offres</a></li>
               </ul>
             </div>
           </div>
@@ -27,17 +26,16 @@ const Footer = () => {
             <div className="single_footer single_footer_address">
               <h4>Page Link</h4>
               <ul>
-                <li key="link1"><a href="#">Lorem Ipsum</a></li>
-                <li key="link2"><a href="#">Simply dummy text</a></li>
-                <li key="link3"><a href="#">The printing and typesetting </a></li>
-                <li key="link4"><a href="#">Standard dummy text</a></li>
-                <li key="link5"><a href="#">Type specimen book</a></li>
+                <li key="link1"><a href="/">Page d'acceuil</a></li>
+                <li key="link2"><a href="/">rechercehr offre</a></li>
+                <li key="link3"><a href="OffreForm">postuler offre </a></li>
+                <li key="link4"><a href="connexion">connexion</a></li>
               </ul>
             </div>
           </div>
           <div className="col-md-4 col-sm-4 col-xs-12">
             <div className="single_footer single_footer_address">
-              <h4>Subscribe today</h4>
+              <h4>Insrivez-vous</h4>
               <div className="signup_form">                           
                 <form action="#" className="subscribe">
                   
